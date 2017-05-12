@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43224B7C1EC563540007816E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B7B1EC563540007816E /* AppDelegate.swift */; };
+		43224B7E1EC563540007816E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B7D1EC563540007816E /* ViewController.swift */; };
+		43224B811EC563540007816E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43224B7F1EC563540007816E /* Main.storyboard */; };
+		43224B841EC563540007816E /* TinyPocketCar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 43224B821EC563540007816E /* TinyPocketCar.xcdatamodeld */; };
+		43224B861EC563540007816E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43224B851EC563540007816E /* Assets.xcassets */; };
+		43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43224B871EC563540007816E /* LaunchScreen.storyboard */; };
+		43224B941EC563540007816E /* TinyPocketCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B931EC563540007816E /* TinyPocketCarTests.swift */; };
+		43224B9F1EC563540007816E /* TinyPocketCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		43224B901EC563540007816E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43224B701EC563540007816E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43224B771EC563540007816E;
+			remoteInfo = TinyPocketCar;
+		};
+		43224B9B1EC563540007816E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 43224B701EC563540007816E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 43224B771EC563540007816E;
+			remoteInfo = TinyPocketCar;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		43224B781EC563540007816E /* TinyPocketCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyPocketCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		43224B7B1EC563540007816E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		43224B7D1EC563540007816E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		43224B801EC563540007816E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		43224B831EC563540007816E /* TinyPocketCar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinyPocketCar.xcdatamodel; sourceTree = "<group>"; };
+		43224B851EC563540007816E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		43224B881EC563540007816E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		43224B8A1EC563540007816E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43224B8F1EC563540007816E /* TinyPocketCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyPocketCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43224B931EC563540007816E /* TinyPocketCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPocketCarTests.swift; sourceTree = "<group>"; };
+		43224B951EC563540007816E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43224B9A1EC563540007816E /* TinyPocketCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyPocketCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPocketCarUITests.swift; sourceTree = "<group>"; };
+		43224BA01EC563540007816E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		43224B751EC563540007816E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B8C1EC563540007816E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B971EC563540007816E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43224B6F1EC563540007816E = {
+			isa = PBXGroup;
+			children = (
+				43224B7A1EC563540007816E /* TinyPocketCar */,
+				43224B921EC563540007816E /* TinyPocketCarTests */,
+				43224B9D1EC563540007816E /* TinyPocketCarUITests */,
+				43224B791EC563540007816E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		43224B791EC563540007816E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43224B781EC563540007816E /* TinyPocketCar.app */,
+				43224B8F1EC563540007816E /* TinyPocketCarTests.xctest */,
+				43224B9A1EC563540007816E /* TinyPocketCarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		43224B7A1EC563540007816E /* TinyPocketCar */ = {
+			isa = PBXGroup;
+			children = (
+				43224B7B1EC563540007816E /* AppDelegate.swift */,
+				43224B7D1EC563540007816E /* ViewController.swift */,
+				43224B7F1EC563540007816E /* Main.storyboard */,
+				43224B851EC563540007816E /* Assets.xcassets */,
+				43224B871EC563540007816E /* LaunchScreen.storyboard */,
+				43224B8A1EC563540007816E /* Info.plist */,
+				43224B821EC563540007816E /* TinyPocketCar.xcdatamodeld */,
+			);
+			path = TinyPocketCar;
+			sourceTree = "<group>";
+		};
+		43224B921EC563540007816E /* TinyPocketCarTests */ = {
+			isa = PBXGroup;
+			children = (
+				43224B931EC563540007816E /* TinyPocketCarTests.swift */,
+				43224B951EC563540007816E /* Info.plist */,
+			);
+			path = TinyPocketCarTests;
+			sourceTree = "<group>";
+		};
+		43224B9D1EC563540007816E /* TinyPocketCarUITests */ = {
+			isa = PBXGroup;
+			children = (
+				43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */,
+				43224BA01EC563540007816E /* Info.plist */,
+			);
+			path = TinyPocketCarUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		43224B771EC563540007816E /* TinyPocketCar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43224BA31EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCar" */;
+			buildPhases = (
+				43224B741EC563540007816E /* Sources */,
+				43224B751EC563540007816E /* Frameworks */,
+				43224B761EC563540007816E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyPocketCar;
+			productName = TinyPocketCar;
+			productReference = 43224B781EC563540007816E /* TinyPocketCar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		43224B8E1EC563540007816E /* TinyPocketCarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43224BA61EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarTests" */;
+			buildPhases = (
+				43224B8B1EC563540007816E /* Sources */,
+				43224B8C1EC563540007816E /* Frameworks */,
+				43224B8D1EC563540007816E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43224B911EC563540007816E /* PBXTargetDependency */,
+			);
+			name = TinyPocketCarTests;
+			productName = TinyPocketCarTests;
+			productReference = 43224B8F1EC563540007816E /* TinyPocketCarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		43224B991EC563540007816E /* TinyPocketCarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 43224BA91EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarUITests" */;
+			buildPhases = (
+				43224B961EC563540007816E /* Sources */,
+				43224B971EC563540007816E /* Frameworks */,
+				43224B981EC563540007816E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				43224B9C1EC563540007816E /* PBXTargetDependency */,
+			);
+			name = TinyPocketCarUITests;
+			productName = TinyPocketCarUITests;
+			productReference = 43224B9A1EC563540007816E /* TinyPocketCarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		43224B701EC563540007816E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = natebirkholz;
+				TargetAttributes = {
+					43224B771EC563540007816E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 65PRBW7K5C;
+						ProvisioningStyle = Automatic;
+					};
+					43224B8E1EC563540007816E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 65PRBW7K5C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43224B771EC563540007816E;
+					};
+					43224B991EC563540007816E = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 65PRBW7K5C;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 43224B771EC563540007816E;
+					};
+				};
+			};
+			buildConfigurationList = 43224B731EC563540007816E /* Build configuration list for PBXProject "TinyPocketCar" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 43224B6F1EC563540007816E;
+			productRefGroup = 43224B791EC563540007816E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				43224B771EC563540007816E /* TinyPocketCar */,
+				43224B8E1EC563540007816E /* TinyPocketCarTests */,
+				43224B991EC563540007816E /* TinyPocketCarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		43224B761EC563540007816E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */,
+				43224B861EC563540007816E /* Assets.xcassets in Resources */,
+				43224B811EC563540007816E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B8D1EC563540007816E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B981EC563540007816E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43224B741EC563540007816E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43224B841EC563540007816E /* TinyPocketCar.xcdatamodeld in Sources */,
+				43224B7E1EC563540007816E /* ViewController.swift in Sources */,
+				43224B7C1EC563540007816E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B8B1EC563540007816E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43224B941EC563540007816E /* TinyPocketCarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		43224B961EC563540007816E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43224B9F1EC563540007816E /* TinyPocketCarUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		43224B911EC563540007816E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43224B771EC563540007816E /* TinyPocketCar */;
+			targetProxy = 43224B901EC563540007816E /* PBXContainerItemProxy */;
+		};
+		43224B9C1EC563540007816E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 43224B771EC563540007816E /* TinyPocketCar */;
+			targetProxy = 43224B9B1EC563540007816E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		43224B7F1EC563540007816E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43224B801EC563540007816E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		43224B871EC563540007816E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				43224B881EC563540007816E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43224BA11EC563540007816E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		43224BA21EC563540007816E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		43224BA41EC563540007816E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		43224BA51EC563540007816E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCar/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCar;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		43224BA71EC563540007816E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinyPocketCar.app/TinyPocketCar";
+			};
+			name = Debug;
+		};
+		43224BA81EC563540007816E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TinyPocketCar.app/TinyPocketCar";
+			};
+			name = Release;
+		};
+		43224BAA1EC563540007816E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TinyPocketCar;
+			};
+			name = Debug;
+		};
+		43224BAB1EC563540007816E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 65PRBW7K5C;
+				INFOPLIST_FILE = TinyPocketCarUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.natebirkholz.TinyPocketCarUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TinyPocketCar;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43224B731EC563540007816E /* Build configuration list for PBXProject "TinyPocketCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43224BA11EC563540007816E /* Debug */,
+				43224BA21EC563540007816E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		43224BA31EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43224BA41EC563540007816E /* Debug */,
+				43224BA51EC563540007816E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43224BA61EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43224BA71EC563540007816E /* Debug */,
+				43224BA81EC563540007816E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		43224BA91EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43224BAA1EC563540007816E /* Debug */,
+				43224BAB1EC563540007816E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		43224B821EC563540007816E /* TinyPocketCar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				43224B831EC563540007816E /* TinyPocketCar.xcdatamodel */,
+			);
+			currentVersion = 43224B831EC563540007816E /* TinyPocketCar.xcdatamodel */;
+			path = TinyPocketCar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 43224B701EC563540007816E /* Project object */;
+}
