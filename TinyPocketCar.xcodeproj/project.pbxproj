@@ -15,6 +15,12 @@
 		43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43224B871EC563540007816E /* LaunchScreen.storyboard */; };
 		43224B941EC563540007816E /* TinyPocketCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B931EC563540007816E /* TinyPocketCarTests.swift */; };
 		43224B9F1EC563540007816E /* TinyPocketCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */; };
+		43F2C0F71ED3D8AD0023567A /* BrakeSqueal_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */; };
+		43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */; };
+		43F2C0FB1ED3D8E10023567A /* Crash_02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */; };
+		43F2C0FD1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */; };
+		43F2C0FF1ED3D8FF0023567A /* MotorRev_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */; };
+		43F2C1011ED3D9080023567A /* TireScreech_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		43224B9A1EC563540007816E /* TinyPocketCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyPocketCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPocketCarUITests.swift; sourceTree = "<group>"; };
 		43224BA01EC563540007816E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BrakeSqueal_01.mp3; sourceTree = "<group>"; };
+		43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_01.mp3; sourceTree = "<group>"; };
+		43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_02.mp3; sourceTree = "<group>"; };
+		43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MotorIdle_lp_01.mp3; sourceTree = "<group>"; };
+		43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MotorRev_01.mp3; sourceTree = "<group>"; };
+		43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TireScreech_01.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,12 @@
 				43224B871EC563540007816E /* LaunchScreen.storyboard */,
 				43224B8A1EC563540007816E /* Info.plist */,
 				43224B821EC563540007816E /* TinyPocketCar.xcdatamodeld */,
+				43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */,
+				43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */,
+				43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */,
+				43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */,
+				43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */,
+				43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */,
 			);
 			path = TinyPocketCar;
 			sourceTree = "<group>";
@@ -238,8 +256,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43F2C0FB1ED3D8E10023567A /* Crash_02.mp3 in Resources */,
+				43F2C0F71ED3D8AD0023567A /* BrakeSqueal_01.mp3 in Resources */,
 				43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */,
+				43F2C0FF1ED3D8FF0023567A /* MotorRev_01.mp3 in Resources */,
 				43224B861EC563540007816E /* Assets.xcassets in Resources */,
+				43F2C0FD1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 in Resources */,
+				43F2C1011ED3D9080023567A /* TireScreech_01.mp3 in Resources */,
+				43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */,
 				43224B811EC563540007816E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +542,7 @@
 				43224BA51EC563540007816E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43224BA61EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +551,7 @@
 				43224BA81EC563540007816E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		43224BA91EC563540007816E /* Build configuration list for PBXNativeTarget "TinyPocketCarUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +560,7 @@
 				43224BAB1EC563540007816E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
