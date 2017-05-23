@@ -18,9 +18,9 @@
 		43F2C0F71ED3D8AD0023567A /* BrakeSqueal_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */; };
 		43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */; };
 		43F2C0FB1ED3D8E10023567A /* Crash_02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */; };
-		43F2C0FD1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */; };
 		43F2C0FF1ED3D8FF0023567A /* MotorRev_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */; };
 		43F2C1011ED3D9080023567A /* TireScreech_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */; };
+		43FA32DF1ED3F2B900586D6E /* MotorIdle_lp_01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 43FA32DE1ED3F2B900586D6E /* MotorIdle_lp_01.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,9 @@
 		43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BrakeSqueal_01.mp3; sourceTree = "<group>"; };
 		43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_01.mp3; sourceTree = "<group>"; };
 		43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_02.mp3; sourceTree = "<group>"; };
-		43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MotorIdle_lp_01.mp3; sourceTree = "<group>"; };
 		43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MotorRev_01.mp3; sourceTree = "<group>"; };
 		43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TireScreech_01.mp3; sourceTree = "<group>"; };
+		43FA32DE1ED3F2B900586D6E /* MotorIdle_lp_01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MotorIdle_lp_01.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 				43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */,
 				43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */,
 				43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */,
-				43F2C0FC1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 */,
+				43FA32DE1ED3F2B900586D6E /* MotorIdle_lp_01.wav */,
 				43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */,
 				43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */,
 			);
@@ -261,8 +261,8 @@
 				43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */,
 				43F2C0FF1ED3D8FF0023567A /* MotorRev_01.mp3 in Resources */,
 				43224B861EC563540007816E /* Assets.xcassets in Resources */,
-				43F2C0FD1ED3D8ED0023567A /* MotorIdle_lp_01.mp3 in Resources */,
 				43F2C1011ED3D9080023567A /* TireScreech_01.mp3 in Resources */,
+				43FA32DF1ED3F2B900586D6E /* MotorIdle_lp_01.wav in Resources */,
 				43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */,
 				43224B811EC563540007816E /* Main.storyboard in Resources */,
 			);

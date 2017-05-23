@@ -19,11 +19,16 @@ class ViewController: UIViewController {
 
     var label: UILabel?
 
+    var enginePlayer: AVAudioPlayer?
     var screechPlayer: AVAudioPlayer?
     var vroomPlayer: AVAudioPlayer?
     var crashPlayer1: AVAudioPlayer?
     var crashPlayer2: AVAudioPlayer?
     var squealPlayer: AVAudioPlayer?
+
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +58,8 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+
+        idle()
 
         label?.center = view.center
     }
@@ -222,6 +229,20 @@ class ViewController: UIViewController {
 
             squealPlayer?.prepareToPlay()
             squealPlayer?.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+
+    func idle() {
+        let url = Bundle.main.url(forResource: "MotorIdle_lp_01", withExtension: "wav")!
+
+        do {
+            enginePlayer = try AVAudioPlayer(contentsOf: url)
+            guard enginePlayer != nil else { return }
+            enginePlayer?.numberOfLoops = -1
+            enginePlayer?.prepareToPlay()
+            enginePlayer?.play()
         } catch let error {
             print(error.localizedDescription)
         }
