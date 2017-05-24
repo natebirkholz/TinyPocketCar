@@ -321,6 +321,7 @@ class ViewController: UIViewController {
             enginePlayer = try AVAudioPlayer(contentsOf: url)
             guard enginePlayer != nil else { return }
             enginePlayer?.numberOfLoops = -1
+            enginePlayer?.setVolume(0.3, fadeDuration: 0)
             enginePlayer?.prepareToPlay()
             enginePlayer?.play()
         } catch let error {
