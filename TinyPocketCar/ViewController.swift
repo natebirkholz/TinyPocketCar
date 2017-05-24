@@ -19,6 +19,12 @@ class ViewController: UIViewController {
 
     var label: UILabel?
 
+    var crashLabel: UILabel?
+    var screechLabel: UILabel?
+    var brakeLabel: UILabel?
+    var revLabel: UILabel?
+
+
     var enginePlayer: AVAudioPlayer?
     var screechPlayer: AVAudioPlayer?
     var vroomPlayer: AVAudioPlayer?
@@ -33,20 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let labelFor = UILabel()
-        labelFor.text = "0"
-        labelFor.font = UIFont.systemFont(ofSize: 24)
-        labelFor.textColor = UIColor.darkGray
-        labelFor.numberOfLines = 1
-        labelFor.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
-        labelFor.textAlignment = .center
-        labelFor.sizeToFit()
-        labelFor.frame.size.width = 60.0
-
-        self.view.addSubview(labelFor)
-        labelFor.center = self.view.center
-
-        self.label = labelFor
+        makeLabels()
 
         motionManager.startAccelerometerUpdates()
         motionManager.startGyroUpdates()
@@ -61,7 +54,87 @@ class ViewController: UIViewController {
 
         idle()
 
-        label?.center = view.center
+    }
+
+    func makeLabels() {
+        let labelOne = UILabel()
+        labelOne.text = "0"
+        labelOne.font = UIFont.systemFont(ofSize: 24)
+        labelOne.textColor = UIColor.darkGray
+        labelOne.numberOfLines = 1
+        labelOne.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
+        labelOne.textAlignment = .center
+        labelOne.sizeToFit()
+
+        self.view.addSubview(labelOne)
+        labelOne.center = self.view.center
+        labelOne.frame.origin.y = labelOne.frame.origin.y - 70
+
+        self.label = labelOne
+
+        let labelTwo = UILabel()
+        labelTwo.text = "Crash!"
+        labelTwo.font = UIFont.systemFont(ofSize: 24)
+        labelTwo.textColor = UIColor.darkGray
+        labelTwo.numberOfLines = 1
+        labelTwo.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
+        labelTwo.textAlignment = .center
+        labelTwo.sizeToFit()
+        labelTwo.alpha = 0
+
+        self.view.addSubview(labelTwo)
+        labelTwo.center = self.view.center
+        labelTwo.frame.origin.y = labelOne.frame.origin.y - -35
+
+        self.crashLabel = labelTwo
+
+        let labelThree = UILabel()
+        labelThree.text = "Screech!"
+        labelThree.font = UIFont.systemFont(ofSize: 24)
+        labelThree.textColor = UIColor.darkGray
+        labelThree.numberOfLines = 1
+        labelThree.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
+        labelThree.textAlignment = .center
+        labelThree.sizeToFit()
+        labelThree.alpha = 0
+
+        self.view.addSubview(labelThree)
+        labelThree.center = self.view.center
+
+        self.screechLabel = labelThree
+
+        let labelFour = UILabel()
+        labelFour.text = "Brake!"
+        labelFour.font = UIFont.systemFont(ofSize: 24)
+        labelFour.textColor = UIColor.darkGray
+        labelFour.numberOfLines = 1
+        labelFour.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
+        labelFour.textAlignment = .center
+        labelFour.sizeToFit()
+        labelFour.alpha = 0
+
+        self.view.addSubview(labelFour)
+        labelFour.center = self.view.center
+        labelFour.frame.origin.y = labelFour.frame.origin.y + 35
+
+        self.brakeLabel = labelFour
+
+        let labelFive = UILabel()
+        labelFive.text = "Rev!"
+        labelFive.font = UIFont.systemFont(ofSize: 24)
+        labelFive.textColor = UIColor.darkGray
+        labelFive.numberOfLines = 1
+        labelFive.frame = CGRect(x: 0, y: 0, width: 125, height: 30)
+        labelFive.textAlignment = .center
+        labelFive.sizeToFit()
+        labelFive.alpha = 0
+
+        self.view.addSubview(labelFive)
+        labelFive.center = self.view.center
+        labelFive.frame.origin.y = labelFive.frame.origin.y + 70
+
+
+        self.revLabel = labelFive
     }
 
     func update() {
@@ -167,6 +240,11 @@ class ViewController: UIViewController {
             screechPlayer = try AVAudioPlayer(contentsOf: url)
             guard let _ = screechPlayer else { return }
 
+            screechLabel?.alpha = 1.0
+            UIView.animate(withDuration: 1.0, animations: {
+                self.screechLabel?.alpha = 0
+            })
+
             screechPlayer?.prepareToPlay()
             screechPlayer?.play()
         } catch let error {
@@ -182,7 +260,10 @@ class ViewController: UIViewController {
         do {
             vroomPlayer = try AVAudioPlayer(contentsOf: url)
             guard vroomPlayer != nil else { return }
-
+            revLabel?.alpha = 1.0
+            UIView.animate(withDuration: 1.0, animations: { 
+                self.revLabel?.alpha = 0
+            })
             vroomPlayer?.prepareToPlay()
             vroomPlayer?.play()
         } catch let error {
@@ -193,26 +274,26 @@ class ViewController: UIViewController {
     func crash() {
         let url1 = Bundle.main.url(forResource: "Crash_01", withExtension: "mp3")!
         let url2 = Bundle.main.url(forResource: "Crash_02", withExtension: "mp3")!
-//        let url3 = Bundle.main.url(forResource: "BrakeSqueal_01", withExtension: "mp3")!
 
         if let play1 = crashPlayer1, play1.isPlaying { return }
         if let play2 = crashPlayer2, play2.isPlaying { return }
-//        if let play3 = squealPlayer, play3.isPlaying { return }
 
         do {
             crashPlayer1 = try AVAudioPlayer(contentsOf: url1)
             guard crashPlayer1 != nil else { return }
             crashPlayer2 = try AVAudioPlayer(contentsOf: url2)
             guard crashPlayer2 != nil else { return }
-//            squealPlayer = try AVAudioPlayer(contentsOf: url3)
-//            guard squealPlayer != nil else { return }
+
+            crashLabel?.alpha = 1.0
+            UIView.animate(withDuration: 1.0, animations: {
+                self.crashLabel?.alpha = 0
+            })
 
             crashPlayer1?.prepareToPlay()
             crashPlayer2?.prepareToPlay()
-//            squealPlayer?.prepareToPlay()
             crashPlayer1?.play()
             crashPlayer2?.play()
-//            squealPlayer?.play()
+
         } catch let error {
             print(error.localizedDescription)
         }
@@ -226,6 +307,11 @@ class ViewController: UIViewController {
         do {
             squealPlayer = try AVAudioPlayer(contentsOf: url)
             guard squealPlayer != nil else { return }
+
+            brakeLabel?.alpha = 1.0
+            UIView.animate(withDuration: 1.0, animations: {
+                self.brakeLabel?.alpha = 0
+            })
 
             squealPlayer?.prepareToPlay()
             squealPlayer?.play()
