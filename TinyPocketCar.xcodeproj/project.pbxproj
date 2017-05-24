@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430C522D1ED6149800971849 /* Crash_04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 430C522C1ED6149800971849 /* Crash_04.mp3 */; };
+		430C522F1ED614A200971849 /* MotorRev_04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 430C522E1ED614A200971849 /* MotorRev_04.mp3 */; };
+		430C52311ED614D000971849 /* Crash_03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 430C52301ED614D000971849 /* Crash_03.mp3 */; };
 		43224B7C1EC563540007816E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B7B1EC563540007816E /* AppDelegate.swift */; };
 		43224B7E1EC563540007816E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B7D1EC563540007816E /* ViewController.swift */; };
 		43224B811EC563540007816E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43224B7F1EC563540007816E /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		430C522C1ED6149800971849 /* Crash_04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_04.mp3; sourceTree = "<group>"; };
+		430C522E1ED614A200971849 /* MotorRev_04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MotorRev_04.mp3; sourceTree = "<group>"; };
+		430C52301ED614D000971849 /* Crash_03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_03.mp3; sourceTree = "<group>"; };
 		43224B781EC563540007816E /* TinyPocketCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TinyPocketCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43224B7B1EC563540007816E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43224B7D1EC563540007816E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,8 +127,11 @@
 				43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */,
 				43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */,
 				43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */,
+				430C52301ED614D000971849 /* Crash_03.mp3 */,
+				430C522C1ED6149800971849 /* Crash_04.mp3 */,
 				43FA32DE1ED3F2B900586D6E /* MotorIdle_lp_01.wav */,
 				43F2C0FE1ED3D8FF0023567A /* MotorRev_01.mp3 */,
+				430C522E1ED614A200971849 /* MotorRev_04.mp3 */,
 				43F2C1001ED3D9080023567A /* TireScreech_01.mp3 */,
 			);
 			path = TinyPocketCar;
@@ -264,6 +273,9 @@
 				43F2C1011ED3D9080023567A /* TireScreech_01.mp3 in Resources */,
 				43FA32DF1ED3F2B900586D6E /* MotorIdle_lp_01.wav in Resources */,
 				43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */,
+				430C522D1ED6149800971849 /* Crash_04.mp3 in Resources */,
+				430C52311ED614D000971849 /* Crash_03.mp3 in Resources */,
+				430C522F1ED614A200971849 /* MotorRev_04.mp3 in Resources */,
 				43224B811EC563540007816E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

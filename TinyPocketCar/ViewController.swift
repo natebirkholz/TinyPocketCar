@@ -241,9 +241,7 @@ class ViewController: UIViewController {
             guard let _ = screechPlayer else { return }
 
             screechLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: {
-                self.screechLabel?.alpha = 0
-            })
+            UIView.animate(withDuration: 1.0, animations: { self.screechLabel?.alpha = 0 })
 
             screechPlayer?.prepareToPlay()
             screechPlayer?.play()
@@ -253,7 +251,7 @@ class ViewController: UIViewController {
     }
 
     func vroom() {
-        let url = Bundle.main.url(forResource: "MotorRev_01", withExtension: "mp3")!
+        let url = Bundle.main.url(forResource: "MotorRev_04", withExtension: "mp3")!
 
         if let play = vroomPlayer, play.isPlaying { return }
 
@@ -261,9 +259,7 @@ class ViewController: UIViewController {
             vroomPlayer = try AVAudioPlayer(contentsOf: url)
             guard vroomPlayer != nil else { return }
             revLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: { 
-                self.revLabel?.alpha = 0
-            })
+            UIView.animate(withDuration: 1.0, animations: { self.revLabel?.alpha = 0 })
             vroomPlayer?.prepareToPlay()
             vroomPlayer?.play()
         } catch let error {
@@ -272,8 +268,8 @@ class ViewController: UIViewController {
     }
 
     func crash() {
-        let url1 = Bundle.main.url(forResource: "Crash_01", withExtension: "mp3")!
-        let url2 = Bundle.main.url(forResource: "Crash_02", withExtension: "mp3")!
+        let url1 = Bundle.main.url(forResource: "Crash_03", withExtension: "mp3")!
+        let url2 = Bundle.main.url(forResource: "Crash_04", withExtension: "mp3")!
 
         if let play1 = crashPlayer1, play1.isPlaying { return }
         if let play2 = crashPlayer2, play2.isPlaying { return }
@@ -309,9 +305,7 @@ class ViewController: UIViewController {
             guard squealPlayer != nil else { return }
 
             brakeLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: {
-                self.brakeLabel?.alpha = 0
-            })
+            UIView.animate(withDuration: 1.0, animations: { self.brakeLabel?.alpha = 0 })
 
             squealPlayer?.prepareToPlay()
             squealPlayer?.play()
