@@ -77,17 +77,15 @@ class MovementEvaluator {
             lastRotation = gyroData.rotationRate
 
             if deltaR > 0.1 {
-                //                print("--> delta: \(delta), \n\t\tx: \(diffX), y:\(diffy), z: \(diffz)")
                 let sorted = [absxR, absyR, abszR].sorted()
                 if sorted.last! == abszR {
                     if abszR >= 2.5 {
                         builder.didTurn = true
                     }
                 }
-
-                delegate?.updateLabel(abszR)
-
             }
+
+            delegate?.updateLabel(abszR)
 
             if delta > 0.2 {
                 let sorted = [absx, absy, absz].sorted()
@@ -105,7 +103,6 @@ class MovementEvaluator {
                     builder.didBrake = true
                 }
             }
-
             return builder.build()
         } else {
             return .none
