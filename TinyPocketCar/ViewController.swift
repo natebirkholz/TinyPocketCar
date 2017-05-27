@@ -12,10 +12,8 @@ import AVFoundation
 
 class ViewController: UIViewController {
 
-    let motionManager = CMMotionManager()
     var timer: Timer!
-    var lastAccel: CMAcceleration = CMAcceleration()
-    var lastRotation: CMRotationRate = CMRotationRate()
+    
 
     var label: UILabel?
 
@@ -24,6 +22,7 @@ class ViewController: UIViewController {
     var brakeLabel: UILabel?
     var revLabel: UILabel?
 
+    let evaluator = MovementEvaluator()
 
     var enginePlayer: AVAudioPlayer?
     var screechPlayer: AVAudioPlayer?
@@ -41,12 +40,7 @@ class ViewController: UIViewController {
 
         makeLabels()
 
-        motionManager.startAccelerometerUpdates()
-        motionManager.startGyroUpdates()
-        motionManager.startMagnetometerUpdates()
-        motionManager.startDeviceMotionUpdates()
-
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ViewController.update), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -138,96 +132,35 @@ class ViewController: UIViewController {
     }
 
     func update() {
-        if let accelerometerData = motionManager.accelerometerData {
-            //            print("--> accelerometerData: \(accelerometerData)\n")
-        }
-        if let gyroData = motionManager.gyroData {
-            //            print("--> gyroData: \(gyroData.rotationRate)\n")
-        }
-        if let magnetometerData = motionManager.magnetometerData {
-//                        print("--> magnetometerData: \(magnetometerData)\n")
-        }
-
-        if let deviceMotion = motionManager.deviceMotion, let gyroData = motionManager.gyroData {
-
-            let delta = deviceMotion.userAcceleration.deltaFromSigned(lastAccel)
-
-            let diffX = deviceMotion.userAcceleration.x + lastAccel.x
-            let diffy = deviceMotion.userAcceleration.y + lastAccel.y
-            let diffz = deviceMotion.userAcceleration.z + lastAccel.z
-
-            let absx = abs(diffX)
-            let absy = abs(diffy)
-            let absz = abs(diffz)
-
-            lastAccel = deviceMotion.userAcceleration
-
-            let deltaR = deviceMotion.rotationRate.deltaFrom(lastRotation)
-
-            let diffXR = gyroData.rotationRate.x + lastRotation.x
-            let diffyR = gyroData.rotationRate.y + lastRotation.y
-            let diffzR = gyroData.rotationRate.z + lastRotation.z
-
-            let absxR = abs(diffXR)
-            let absyR = abs(diffyR)
-            let abszR = abs(diffzR)
-
-            lastRotation = gyroData.rotationRate
-
-            if deltaR > 0.1 {
-                //                print("--> delta: \(delta), \n\t\tx: \(diffX), y:\(diffy), z: \(diffz)")
-                let sorted = [absxR, absyR, abszR].sorted()
-                if sorted.last! == absxR {
-                    print("\t ROTATED X")
-                } else if sorted.last! == absyR {
-                    print("\t ROTATED Y")
-                } else if sorted.last! == abszR {
-                    print("\t ROTATED Z")
-                    if abszR >= 2.5 {
-                        screech()
-                    }
-                }
-
-                if abszR >= 2.5 {
-                    label?.text = "2.5"
-                    label?.backgroundColor = UIColor.red
-                } else if abszR >= 1.0 {
-                    label?.text = "1.0"
-                    label?.backgroundColor = UIColor.yellow
-                } else if abszR >= 0.5 {
-                    label?.text = "0.5"
-                    label?.backgroundColor = UIColor.green
-                } else {
-                    label?.text = "0.0"
-                    label?.backgroundColor = UIColor.clear
-                }
-
-            }
-
-            if delta > 0.2 {
-                //                print("--> delta: \(delta), \n\t\tx: \(diffX), y:\(diffy), z: \(diffz)")
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absx {
-                    //                    print("\t MOVED X")
-                } else if sorted.last! == absy {
-                    print("\t MOVED Y")
-                    vroom()
-                } else if sorted.last! == absz {
-                    //                    print("\t MOVED Z")
-                }
-            } else if delta < -0.6 {
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absy {
-                    print("\t CRASHED Y")
-                    crash()
-                }
-            } else if delta < -0.2 {
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absy {
-                    print("\t BRAKED Y")
-                    brake()
-                }
-            }
+        let evaluation = evaluator.evaluateMovement()
+        switch evaluation {
+        case .crash:
+            crash()
+            // eventual animation/vfx
+        case .turn:
+            screech()
+            // eventual animation/vfx
+        case .brake:
+            brake()
+            // eventual animation/vfx
+        case .forwardFast:
+            vroom()
+            // eventual animation/vfx
+        case .backwardFast:
+            vroom()
+            // eventual animation/vfx
+        case .forward:
+            print("forward")
+            // eventual animation/vfx
+        case .backward:
+            print("backward")
+            // eventual animation/vfx
+        case .changedDirection:
+            print("changed direction")
+            // eventual animation/vfx
+        case .none:
+            print("no movement")
+            // eventual animation/vfx
         }
     }
 
@@ -330,8 +263,26 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: MovementEvaluatorDelegate {
+    func updateLabel(_ value: Double) {
+        if value >= 2.5 {
+            label?.text = "2.5"
+            label?.backgroundColor = UIColor.red
+        } else if value >= 1.0 {
+            label?.text = "1.0"
+            label?.backgroundColor = UIColor.yellow
+        } else if value >= 0.5 {
+            label?.text = "0.5"
+            label?.backgroundColor = UIColor.green
+        } else {
+            label?.text = "0.0"
+            label?.backgroundColor = UIColor.clear
+        }
+    }
+}
+
 extension CMAcceleration {
-    var sum:Double {
+    var sum: Double {
         let sumFor = abs(x) + abs(y) + abs(z)
         return sumFor
     }
@@ -348,7 +299,7 @@ extension CMAcceleration {
 }
 
 extension CMRotationRate {
-    var sum:Double {
+    var sum: Double {
         let sumFor = abs(x) + abs(y) + abs(z)
         return sumFor
     }

@@ -18,6 +18,8 @@
 		43224B891EC563540007816E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43224B871EC563540007816E /* LaunchScreen.storyboard */; };
 		43224B941EC563540007816E /* TinyPocketCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B931EC563540007816E /* TinyPocketCarTests.swift */; };
 		43224B9F1EC563540007816E /* TinyPocketCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */; };
+		43C17D721ED930F60045DD4F /* MovementEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C17D711ED930F60045DD4F /* MovementEvaluator.swift */; };
+		43C17D741ED933120045DD4F /* EventQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C17D731ED933120045DD4F /* EventQueue.swift */; };
 		43F2C0F71ED3D8AD0023567A /* BrakeSqueal_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */; };
 		43F2C0F91ED3D8D40023567A /* Crash_01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */; };
 		43F2C0FB1ED3D8E10023567A /* Crash_02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */; };
@@ -61,6 +63,8 @@
 		43224B9A1EC563540007816E /* TinyPocketCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyPocketCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43224B9E1EC563540007816E /* TinyPocketCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyPocketCarUITests.swift; sourceTree = "<group>"; };
 		43224BA01EC563540007816E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43C17D711ED930F60045DD4F /* MovementEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovementEvaluator.swift; sourceTree = "<group>"; };
+		43C17D731ED933120045DD4F /* EventQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventQueue.swift; sourceTree = "<group>"; };
 		43F2C0F61ED3D8AD0023567A /* BrakeSqueal_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BrakeSqueal_01.mp3; sourceTree = "<group>"; };
 		43F2C0F81ED3D8D40023567A /* Crash_01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_01.mp3; sourceTree = "<group>"; };
 		43F2C0FA1ED3D8E10023567A /* Crash_02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Crash_02.mp3; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 			children = (
 				43224B7B1EC563540007816E /* AppDelegate.swift */,
 				43224B7D1EC563540007816E /* ViewController.swift */,
+				43C17D711ED930F60045DD4F /* MovementEvaluator.swift */,
+				43C17D731ED933120045DD4F /* EventQueue.swift */,
 				43224B7F1EC563540007816E /* Main.storyboard */,
 				43224B851EC563540007816E /* Assets.xcassets */,
 				43224B871EC563540007816E /* LaunchScreen.storyboard */,
@@ -302,7 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43224B841EC563540007816E /* TinyPocketCar.xcdatamodeld in Sources */,
+				43C17D741ED933120045DD4F /* EventQueue.swift in Sources */,
 				43224B7E1EC563540007816E /* ViewController.swift in Sources */,
+				43C17D721ED930F60045DD4F /* MovementEvaluator.swift in Sources */,
 				43224B7C1EC563540007816E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
