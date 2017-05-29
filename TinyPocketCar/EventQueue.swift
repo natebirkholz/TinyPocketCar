@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct EventQueue<T: Comparable, Equatable> {
+struct EventQueue<T: Comparable & Equatable> {
     fileprivate var eventArray = [T] ()
     let capacity: Int
     fileprivate(set) var lastElement: T?

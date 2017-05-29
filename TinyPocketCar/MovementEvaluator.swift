@@ -14,10 +14,10 @@ protocol MovementEvaluatorDelegate: class {
 }
 
 class MovementEvaluator {
-    private var rotationEvents = [CMRotationRate]()
-    private var rotationDeltas = [Double]()
-    private var accelerationEvents = [CMAcceleration]()
-    private var accelerationDeltas = [Double]()
+    private var zRotationEvents = EventQueue<Double>(withCapacity: 10)
+    private var rotationDeltas = EventQueue<Double>(withCapacity: 10)
+    private var yAccelerationEvents = EventQueue<Double>(withCapacity: 10)
+    private var accelerationDeltas = EventQueue<Double>(withCapacity: 10)
 
     let motionManager = CMMotionManager()
     var lastAccel: CMAcceleration = CMAcceleration()
@@ -32,74 +32,62 @@ class MovementEvaluator {
         motionManager.startDeviceMotionUpdates()
     }
 
-    func addRotationEvent(_ event: CMRotationRate) {
-        rotationEvents.insert(event, at: 0)
-        if rotationEvents.count == 11 { rotationEvents.remove(at: 10) }
-    }
-
-    func addRotationDelta(_ delta: Double) {
-        rotationDeltas.insert(delta, at: 0)
-        if rotationDeltas.count == 11 { rotationDeltas.remove(at: 10) }
-    }
-
-    func addAccelerationEvent(_ event: CMAcceleration) {
-        
-    }
-
     func evaluateMovement() -> MovementEvaluation {
         if let deviceMotion = motionManager.deviceMotion, let gyroData = motionManager.gyroData {
             var builder = EvaluationBuilder()
 
             // Get the *total* movement of the device. We want to know if the device is *primarily*
-            // rotating side to side (z axis) and / or is primarily moving back and forth (y axis)
-            let delta = deviceMotion.userAcceleration.deltaFromSigned(lastAccel)
+            // moving back and forth (y axis)
+            let deltaMove = deviceMotion.userAcceleration.deltaFromSigned(lastAccel)
 
-            let diffX = deviceMotion.userAcceleration.x + lastAccel.x
-            let diffy = deviceMotion.userAcceleration.y + lastAccel.y
-            let diffz = deviceMotion.userAcceleration.z + lastAccel.z
+            let diffxMove = deviceMotion.userAcceleration.x + lastAccel.x
+            let diffyMove = deviceMotion.userAcceleration.y + lastAccel.y
+            let diffzMove = deviceMotion.userAcceleration.z + lastAccel.z
 
-            let absx = abs(diffX)
-            let absy = abs(diffy)
-            let absz = abs(diffz)
+            let absxMove = abs(diffxMove)
+            let absyMove = abs(diffyMove)
+            let abszMove = abs(diffzMove)
 
             lastAccel = deviceMotion.userAcceleration
 
-            let deltaR = deviceMotion.rotationRate.deltaFrom(lastRotation)
+            // Get the *total* rotation of the device. We want to know if the device is *primarily*
+            // rotating side to side (z axis)
+            let deltaRotation = deviceMotion.rotationRate.deltaFrom(lastRotation)
 
-            let diffXR = gyroData.rotationRate.x + lastRotation.x
-            let diffyR = gyroData.rotationRate.y + lastRotation.y
-            let diffzR = gyroData.rotationRate.z + lastRotation.z
+            let diffxRotation = gyroData.rotationRate.x + lastRotation.x
+            let diffyRotation = gyroData.rotationRate.y + lastRotation.y
+            let diffzRotation = gyroData.rotationRate.z + lastRotation.z
 
-            let absxR = abs(diffXR)
-            let absyR = abs(diffyR)
-            let abszR = abs(diffzR)
+            let absxRotation = abs(diffxRotation)
+            let absyRotation = abs(diffyRotation)
+            let abszRotation = abs(diffzRotation)
 
             lastRotation = gyroData.rotationRate
 
-            if deltaR > 0.1 {
-                let sorted = [absxR, absyR, abszR].sorted()
-                if sorted.last! == abszR {
-                    if abszR >= 2.5 {
+            if deltaRotation > 1 {
+                let sorted = [absxRotation, absyRotation, abszRotation].sorted()
+                if sorted.last! == abszRotation {
+                    if abszRotation >= 2.5 {
                         builder.didTurn = true
                     }
                 }
             }
 
-            delegate?.updateLabel(abszR)
+            delegate?.updateLabel(abszRotation)
 
-            if delta > 0.2 {
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absy {
+            if deltaMove > 0.2 {
+                let sorted = [absxMove, absyMove, abszMove].sorted()
+                if sorted.last! == absyMove {
                     builder.didRev = true
                 }
-            } else if delta < -0.6 {
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absy {
+            } else if deltaMove < -0.6 {
+                let sorted = [absxMove, absyMove, abszMove].sorted()
+                if sorted.last! == absyMove {
                     builder.didCrash = true
                 }
-            } else if delta < -0.2 {
-                let sorted = [absx, absy, absz].sorted()
-                if sorted.last! == absy {
+            } else if deltaMove < -0.2 {
+                let sorted = [absxMove, absyMove, abszMove].sorted()
+                if sorted.last! == absyMove {
                     builder.didBrake = true
                 }
             }
