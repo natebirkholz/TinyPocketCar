@@ -13,10 +13,8 @@ import AVFoundation
 class ViewController: UIViewController {
 
     var timer: Timer!
-    
 
     var label: UILabel?
-
     var crashLabel: UILabel?
     var screechLabel: UILabel?
     var brakeLabel: UILabel?
@@ -39,8 +37,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         makeLabels()
+        makePlayers()
 
-        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(update), userInfo: nil, repeats: true)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -131,135 +130,108 @@ class ViewController: UIViewController {
         self.revLabel = labelFive
     }
 
+    func makePlayers() {
+        let turnUrl = Bundle.main.url(forResource: "TireScreech_01", withExtension: "mp3")!
+        let revUrl = Bundle.main.url(forResource: "MotorRev_04", withExtension: "mp3")!
+        let crash1Url = Bundle.main.url(forResource: "Crash_03", withExtension: "mp3")!
+        let crash2Url = Bundle.main.url(forResource: "Crash_04", withExtension: "mp3")!
+        let brakeUrl = Bundle.main.url(forResource: "BrakeSqueal_01", withExtension: "mp3")!
+        let idleUrl = Bundle.main.url(forResource: "MotorIdle_lp_01", withExtension: "wav")!
+
+        do {
+            screechPlayer = try AVAudioPlayer(contentsOf: turnUrl)
+            vroomPlayer = try AVAudioPlayer(contentsOf: revUrl)
+            crashPlayer1 = try AVAudioPlayer(contentsOf: crash1Url)
+            crashPlayer2 = try AVAudioPlayer(contentsOf: crash2Url)
+            squealPlayer = try AVAudioPlayer(contentsOf: brakeUrl)
+            enginePlayer = try AVAudioPlayer(contentsOf: idleUrl)
+        } catch let error {
+            print(error)
+        }
+    }
+
     func update() {
         let evaluation = evaluator.evaluateMovement()
         switch evaluation {
         case .crash:
             crash()
-            // eventual animation/vfx
+        // eventual animation/vfx
         case .turn:
-            screech()
-            // eventual animation/vfx
+            turn()
+        // eventual animation/vfx
         case .brake:
-            brake()
-            // eventual animation/vfx
+            if let player = screechPlayer, player.isPlaying {
+                // Don't brake on a curve, very dangerous, physics is against you.
+            } else {
+                brake()
+            }
+        // eventual animation/vfx
         case .forwardFast:
             vroom()
-            // eventual animation/vfx
+        // eventual animation/vfx
         case .backwardFast:
             vroom()
-            // eventual animation/vfx
+        // eventual animation/vfx
         case .forward:
             print("forward")
-            // eventual animation/vfx
+        // eventual animation/vfx
         case .backward:
             print("backward")
-            // eventual animation/vfx
-        case .changedDirection:
-            print("changed direction")
-            // eventual animation/vfx
+        // eventual animation/vfx
         case .none:
-            print("no movement")
+            let _ = 10
             // eventual animation/vfx
         }
     }
 
-    func screech() {
-        let url = Bundle.main.url(forResource: "TireScreech_01", withExtension: "mp3")!
-
+    func turn() {
         if let play = screechPlayer, play.isPlaying { return }
 
-        do {
-            screechPlayer = try AVAudioPlayer(contentsOf: url)
-            guard let _ = screechPlayer else { return }
+        screechLabel?.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: { self.screechLabel?.alpha = 0 })
 
-            screechLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: { self.screechLabel?.alpha = 0 })
-
-            screechPlayer?.prepareToPlay()
-            screechPlayer?.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        screechPlayer?.prepareToPlay()
+        screechPlayer?.play()
     }
 
     func vroom() {
-        let url = Bundle.main.url(forResource: "MotorRev_04", withExtension: "mp3")!
-
         if let play = vroomPlayer, play.isPlaying { return }
 
-        do {
-            vroomPlayer = try AVAudioPlayer(contentsOf: url)
-            guard vroomPlayer != nil else { return }
-            revLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: { self.revLabel?.alpha = 0 })
-            vroomPlayer?.prepareToPlay()
-            vroomPlayer?.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        revLabel?.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: { self.revLabel?.alpha = 0 })
+
+        vroomPlayer?.prepareToPlay()
+        vroomPlayer?.play()
     }
 
     func crash() {
-        let url1 = Bundle.main.url(forResource: "Crash_03", withExtension: "mp3")!
-        let url2 = Bundle.main.url(forResource: "Crash_04", withExtension: "mp3")!
-
         if let play1 = crashPlayer1, play1.isPlaying { return }
         if let play2 = crashPlayer2, play2.isPlaying { return }
 
-        do {
-            crashPlayer1 = try AVAudioPlayer(contentsOf: url1)
-            guard crashPlayer1 != nil else { return }
-            crashPlayer2 = try AVAudioPlayer(contentsOf: url2)
-            guard crashPlayer2 != nil else { return }
+        crashLabel?.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: { self.crashLabel?.alpha = 0 })
 
-            crashLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: {
-                self.crashLabel?.alpha = 0
-            })
-
-            crashPlayer1?.prepareToPlay()
-            crashPlayer2?.prepareToPlay()
-            crashPlayer1?.play()
-            crashPlayer2?.play()
-
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        crashPlayer1?.prepareToPlay()
+        crashPlayer2?.prepareToPlay()
+        crashPlayer1?.play()
+        crashPlayer2?.play()
     }
 
     func brake() {
-        let url = Bundle.main.url(forResource: "BrakeSqueal_01", withExtension: "mp3")!
-
         if let play = squealPlayer, play.isPlaying { return }
 
-        do {
-            squealPlayer = try AVAudioPlayer(contentsOf: url)
-            guard squealPlayer != nil else { return }
+        brakeLabel?.alpha = 1.0
+        UIView.animate(withDuration: 1.0, animations: { self.brakeLabel?.alpha = 0 })
 
-            brakeLabel?.alpha = 1.0
-            UIView.animate(withDuration: 1.0, animations: { self.brakeLabel?.alpha = 0 })
-
-            squealPlayer?.prepareToPlay()
-            squealPlayer?.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        squealPlayer?.prepareToPlay()
+        squealPlayer?.play()
     }
 
     func idle() {
-        let url = Bundle.main.url(forResource: "MotorIdle_lp_01", withExtension: "wav")!
-
-        do {
-            enginePlayer = try AVAudioPlayer(contentsOf: url)
-            guard enginePlayer != nil else { return }
-            enginePlayer?.numberOfLoops = -1
-            enginePlayer?.setVolume(0.3, fadeDuration: 0)
-            enginePlayer?.prepareToPlay()
-            enginePlayer?.play()
-        } catch let error {
-            print(error.localizedDescription)
-        }
+        enginePlayer?.numberOfLoops = -1
+        enginePlayer?.setVolume(0.3, fadeDuration: 0)
+        enginePlayer?.prepareToPlay()
+        enginePlayer?.play()
     }
 }
 
@@ -303,7 +275,7 @@ extension CMRotationRate {
         let sumFor = abs(x) + abs(y) + abs(z)
         return sumFor
     }
-
+    
     func deltaFrom(_ other: CMRotationRate) -> Double {
         let deltaFor = abs(sum - other.sum)
         return deltaFor
